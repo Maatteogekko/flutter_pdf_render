@@ -1234,7 +1234,7 @@ class PdfViewerState extends State<PdfViewer>
               widget.params?.interactionEndFrictionCoefficient ?? 0.0000135,
           child: Stack(
             children: <Widget>[
-              SizedBox(width: docSize.width, height: docSize.height),
+              SizedBox(width: max(docSize.width, viewSize.width), height: max(docSize.height, viewSize.height)),
               ...iterateLaidOutPages(viewSize)
             ],
           ),
